@@ -8,6 +8,7 @@ public class FinishLine : MonoBehaviour
 {
     [SerializeField] float delay = 2f;
     [SerializeField] ParticleSystem FinishEffect;
+    
     public Boolean isFinished = false;
     public void Start()
     {
@@ -25,6 +26,7 @@ public class FinishLine : MonoBehaviour
             FinishEffect.Play();
         }
         isFinished = true;
+        GetComponent<AudioSource>().Play();
         Invoke("onLoadScene", delay);
     }
     public void onLoadScene()

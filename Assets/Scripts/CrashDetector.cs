@@ -19,6 +19,7 @@ public class CrachDetector : MonoBehaviour
         if (other.gameObject.tag == "Ground" && playerHead.IsTouching(other.collider))
         {
             CrashEffect.Play();
+            GetComponent<AudioSource>().Play();
             Invoke("onLoadScene", delay);
         }
     }
